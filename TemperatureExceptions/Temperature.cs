@@ -7,11 +7,6 @@ namespace TemperatureExceptions
         private double fahrenheit;
         public static double AbsoluteZeroFahrenheit { get; } = -459.67;
 
-        public static Temperature[] temps = new Temperature[] { };
-
-        public double firstTemp = temps[0].Fahrenheit;
-
-
         public Temperature(double fahrenheit)
         {
             try
