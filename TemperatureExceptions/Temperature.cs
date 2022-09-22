@@ -7,9 +7,27 @@ namespace TemperatureExceptions
         private double fahrenheit;
         public static double AbsoluteZeroFahrenheit { get; } = -459.67;
 
+        public static Temperature[] temps = new Temperature[] { };
+
+        public double firstTemp = temps[0].Fahrenheit;
+
+
         public Temperature(double fahrenheit)
         {
-            Fahrenheit = fahrenheit;
+            try
+            {
+                Fahrenheit = fahrenheit;
+            }
+            catch(ArgumentOutOfRangeException e)
+            {
+                Fahrenheit = -459.67;
+            }
+            finally
+            {
+                Console.WriteLine(firstTemp + "Fahrenheit cannot be less than -459.67");
+            }
+            
+            
         }
 
         public double Fahrenheit
